@@ -1,7 +1,29 @@
-  📍  📍  📍  📍  📍  📍  📍 At Holy Angels Catholic School, PE class is rolling in a whole new direction. Every Wednesday and Friday, bicycles aren't just for recess or a   📍  📍 special treat. They're part of the curriculum. Real physical education.
+import Image from "next/image";
 
-  📍  📍 Students participate in an eight-lesson bike training program that's aligned with national SHAPE America standards. That means skills are taught safely, progressively, and   📍  📍 with real purpose.   📍 The Holy Angels PE instructor is trained and certified through an online program,   📍 learning the best practices for teaching kindergarteners using the balance bike method. Because here's the   📍 thing: confidence comes before pedals.
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white text-zinc-900">
+      <header className="border-b border-zinc-200 bg-white">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <Image
+            src="/logo.png"
+            alt="Heartland Intelligence Group"
+            width={260}
+            height={80}
+            priority
+          />
+        </div>
+      </header>
 
-And   📍  📍 the benefits? They go way beyond just having fun. Riding bikes improves balance, coordination, and gross motor skills as kids learn how to start, steer, and stop on their own.  📍  It strengthens muscles and builds cardiovascular fitness through   📍  📍 steady movement and proper upright posture. And because biking is low-impact, it supports healthy weight, better   📍  📍 sleep, and higher energy levels without stressing growing bodies.
+      <main className="mx-auto max-w-6xl px-6 py-16">
+        <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+          Heartland Intelligence Group
+        </h1>
 
-At Holy Angels, kids aren't just learning to ride bikes. They're building   📍  📍  📍 lifelong  📍 skills, one wheel at a time.
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-700">
+          Practical AI systems for leaders who want clarity, speed, and results.
+        </p>
+      </main>
+    </div>
+  );
+}
