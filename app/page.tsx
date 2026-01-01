@@ -4,16 +4,23 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <header className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Image
-            src="/logo.png"
-            alt="Heartland Intelligence Group"
-            width={260}
-            height={80}
-            priority
-          />
-        </div>
-      </header>
+  <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <Image
+      src="/logo.png"
+      alt="Heartland Intelligence Group"
+      width={260}
+      height={80}
+      priority
+    />
+
+    <nav className="flex gap-8 text-sm font-medium text-zinc-700">
+      <a href="/" className="hover:text-zinc-900">Home</a>
+      <a href="/about" className="hover:text-zinc-900">About</a>
+      <a href="/services" className="hover:text-zinc-900">Services</a>
+      <a href="/contact" className="hover:text-zinc-900">Contact</a>
+    </nav>
+  </div>
+</header>
 
       <main className="mx-auto max-w-6xl px-6 py-16">
         <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
