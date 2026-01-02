@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const posts: Record<
-  string,
-  { title: string; date: string; content: string }
-> = {
+type Post = {
+  title: string;
+  date: string;
+  content: string;
+};
+
+const posts: Record<string, Post> = {
   "what-were-building": {
     title: "What we’re building at Heartland Intelligence Group",
     date: "2026-01-01",
     content:
-      "We’re focused on helping leaders turn AI into repeatable, reliable systems.\n\nNot experiments. Not demos.\nSystems that actually support decisions and execution.",
+      "We’re focused on helping leaders turn artificial intelligence into repeatable, reliable systems.\n\nNot experiments. Not demos.\nSystems that actually support decisions and execution.",
   },
   "three-ai-workflows": {
     title: "Three AI workflows every service business should systemize",
@@ -25,8 +28,14 @@ const posts: Record<
   },
 };
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug];
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const post = posts[slug];
   if (!post) return notFound();
 
   return (
@@ -38,6 +47,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
         {post.title}
       </h1>
+
       <div className="mt-2 text-sm text-zinc-500">{post.date}</div>
 
       <article className="mt-8 space-y-4 text-zinc-800">
