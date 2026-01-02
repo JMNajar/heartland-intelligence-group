@@ -21,7 +21,7 @@ export default function NewsPage() {
   ];
 
   return (
-    <div>
+    <div className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">News</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-700">
         Updates, insights, and field notes from Heartland Intelligence Group.
@@ -29,10 +29,15 @@ export default function NewsPage() {
 
       <div className="mt-10 grid gap-6">
         {posts.map((post) => (
-          <article key={post.title} className="rounded-2xl border border-zinc-200 p-6">
+          <article
+            key={post.title}
+            className="rounded-2xl border border-zinc-200 p-6"
+          >
             <div className="text-sm text-zinc-500">{post.date}</div>
             <h2 className="mt-2 text-xl font-semibold">{post.title}</h2>
-            <p className="mt-2 text-sm leading-7 text-zinc-700">{post.excerpt}</p>
+            <p className="mt-2 text-sm leading-7 text-zinc-700">
+              {post.excerpt}
+            </p>
           </article>
         ))}
       </div>

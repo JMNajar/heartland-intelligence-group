@@ -1,45 +1,56 @@
-import type { Metadata } from "next";
-import Image from "next/image";
+// app/layout.tsx
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Heartland Intelligence Group",
-  description: "Practical AI systems for leaders who want clarity, speed, and results.",
+  description: "Heartland Intelligence Group",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-zinc-900">
-        <header className="border-b border-zinc-200 bg-white">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-            <a href="/" className="flex items-center gap-3">
+      <body className="min-h-screen flex flex-col">
+        {/* HEADER (only here) */}
+        <header className="border-b">
+          <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/logo.png"
                 alt="Heartland Intelligence Group"
-                width={240}
-                height={70}
+                width={260}
+                height={80}
                 priority
               />
-            </a>
+            </Link>
 
-            <nav className="flex items-center gap-6 text-sm font-medium text-zinc-700">
-              <a href="/" className="hover:text-zinc-900">Home</a>
-              <a href="/about" className="hover:text-zinc-900">About</a>
-              <a href="/news" className="hover:text-zinc-900">News</a>
+            <nav className="flex gap-6 text-sm">
+              <Link href="/">Home</Link>
+              <Link href="/#about">About</Link>
+              <Link href="/#services">Services</Link>
+              <Link href="/news">News</Link>
+              <Link href="/contact">Contact</Link>
             </nav>
           </div>
         </header>
 
-        <main className="mx-auto max-w-6xl px-6 py-12">{children}</main>
+        {/* MAIN */}
+        <main className="flex-1">{children}</main>
 
-        <footer className="border-t border-zinc-200 py-8">
-          <div className="mx-auto max-w-6xl px-6 text-sm text-zinc-600">
-            © {new Date().getFullYear()} Heartland Intelligence Group. All rights reserved.
+        {/* FOOTER (only here) */}
+        <footer className="border-t">
+          <div className="mx-auto max-w-6xl px-4 py-6 flex items-center justify-between text-sm">
+            <p className="opacity-70">
+              © {new Date().getFullYear()} Heartland Intelligence Group
+            </p>
+            <nav>
+              <Link href="/privacy">Privacy</Link>
+            </nav>
           </div>
         </footer>
       </body>
