@@ -1,58 +1,50 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
-const posts = [
-  {
-    slug: "what-were-building",
+const posts: Record<
+  string,
+  { title: string; date: string; content: string }
+> = {
+  "what-were-building": {
     title: "What we’re building at Heartland Intelligence Group",
     date: "2026-01-01",
-    excerpt:
-      "A quick look at how we help leaders turn AI into repeatable systems that drive clarity, speed, and results.",
+    content:
+      "We’re focused on helping leaders turn AI into repeatable, reliable systems.\n\nNot experiments. Not demos.\nSystems that actually support decisions and execution.",
   },
-  {
-    slug: "three-ai-workflows",
+  "three-ai-workflows": {
     title: "Three AI workflows every service business should systemize",
     date: "2025-12-20",
-    excerpt:
-      "Simple automations and copilots that save time weekly without creating chaos.",
+    content:
+      "Most AI value doesn’t come from big ideas.\nIt comes from boring workflows done consistently.",
   },
-  {
-    slug: "ai-adoption-checklist",
+  "ai-adoption-checklist": {
     title: "AI adoption: the boring checklist that wins",
     date: "2025-12-05",
-    excerpt:
-      "Governance, training, and rollout practices that keep teams confident and consistent.",
+    content:
+      "AI fails when governance and rollout are ignored.\nThis checklist avoids that.",
   },
-];
+};
 
-export default function NewsPage() {
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  const post = posts[params.slug];
+  if (!post) return notFound();
+
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-        News
+    <div className="mx-auto max-w-3xl px-6 py-16">
+      <Link href="/news" className="text-sm text-zinc-600 hover:underline">
+        ← Back to News
+      </Link>
+
+      <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+        {post.title}
       </h1>
+      <div className="mt-2 text-sm text-zinc-500">{post.date}</div>
 
-      <p className="mt-4 max-w-2xl text-lg text-zinc-700">
-        Updates, insights, and field notes from Heartland Intelligence Group.
-      </p>
-
-      <div className="mt-12 grid gap-8">
-        {posts.map((post) => (
-          <article
-            key={post.slug}
-            className="rounded-xl border p-6 hover:bg-zinc-50 transition"
-          >
-            <div className="text-sm text-zinc-500">{post.date}</div>
-
-            <h2 className="mt-2 text-xl font-semibold">
-              <Link href={`/news/${post.slug}`} className="hover:underline">
-                {post.title}
-              </Link>
-            </h2>
-
-            <p className="mt-2 text-sm text-zinc-700">{post.excerpt}</p>
-          </article>
-        ))}
-      </div>
+      <article className="mt-8 space-y-4 text-zinc-800">
+        {post.content.split("\n").map((line, i) =>
+          line.trim() ? <p key={i}>{line}</p> : null
+        )}
+      </article>
     </div>
   );
 }
