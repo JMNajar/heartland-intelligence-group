@@ -138,7 +138,9 @@ export default function HomePage() {
     className="text-sm font-medium text-zinc-900 underline underline-offset-4 hover:no-underline"
   >
     Pressure-test your current AI approach →
-  </Link
+  </Link>
+</div>
+
       </section>
 
       {/* CTA */}
