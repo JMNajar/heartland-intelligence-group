@@ -1,30 +1,9 @@
 import Link from "next/link";
-
-const posts = [
-  {
-    slug: "what-were-building",
-    title: "What we’re building at Heartland Intelligence Group",
-    date: "2026-01-01",
-    excerpt:
-      "A quick look at how we help leaders turn AI into repeatable systems that drive clarity, speed, and results.",
-  },
-  {
-    slug: "three-ai-workflows",
-    title: "Three AI workflows every service business should systemize",
-    date: "2025-12-20",
-    excerpt:
-      "Simple automations and copilots that save time weekly without creating chaos.",
-  },
-  {
-    slug: "ai-adoption-checklist",
-    title: "AI adoption: the boring checklist that wins",
-    date: "2025-12-05",
-    excerpt:
-      "Governance, training, and rollout practices that keep teams confident and consistent.",
-  },
-];
+import { posts } from "./posts";
 
 export default function NewsPage() {
+  const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">News</h1>
@@ -34,7 +13,7 @@ export default function NewsPage() {
       </p>
 
       <div className="mt-12 grid gap-8">
-        {posts.map((post) => (
+        {sorted.map((post) => (
           <article
             key={post.slug}
             className="rounded-xl border p-6 transition hover:bg-zinc-50"
