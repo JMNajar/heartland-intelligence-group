@@ -85,61 +85,110 @@ export default function HomePage() {
       {/* SERVICES */}
       <section id="services" className="mx-auto max-w-6xl border-t px-6 py-16">
 <h2 className="text-2xl font-semibold tracking-tight">
-  What We Deliver
-</h2>
+{/* SERVICES */}
+<section id="services" className="mx-auto max-w-6xl border-t px-6 py-16">
+  <h2 className="text-2xl font-semibold tracking-tight">What We Deliver</h2>
 
-<p className="mt-4 max-w-3xl text-zinc-700 leading-8">
-  We design and implement AI systems that operate inside your business—not
-  alongside it. Everything we deliver is built to support execution, governance,
-  and measurable outcomes.
-</p>
+  <p className="mt-4 max-w-3xl text-zinc-700 leading-8">
+    Practical AI systems that get used. We design and implement AI inside real
+    workflows—governed, measurable, and built for adoption.
+  </p>
 
-<div className="mt-8 grid gap-6 md:grid-cols-2">
-  <div className="rounded-lg border p-6">
-    <h3 className="font-semibold">Executive AI Strategy</h3>
-    <p className="mt-2 text-sm text-zinc-700">
-      Clear roadmaps that align AI to business priorities, ownership, and risk—
-      before tools or vendors enter the conversation.
-    </p>
+  <div className="mt-10 grid gap-6 md:grid-cols-2">
+    {/* Card 1 */}
+    <div className="rounded-xl border p-6">
+      <h3 className="text-lg font-semibold text-zinc-900">
+        AI Strategy & Systems
+      </h3>
+      <p className="mt-2 text-sm leading-7 text-zinc-700">
+        Direction before deployment: clear roadmaps, prioritized use cases, and
+        governance that prevents “AI experiments” from spreading.
+      </p>
+      <p className="mt-4 text-sm font-medium text-zinc-900">
+        Result: clarity, focus, forward motion.
+      </p>
+      <div className="mt-5">
+        <Link
+          href="/contact"
+          className="text-sm font-medium text-zinc-900 underline underline-offset-4 hover:no-underline"
+        >
+          Open to a short strategy conversation →
+        </Link>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="rounded-xl border p-6">
+      <h3 className="text-lg font-semibold text-zinc-900">
+        SMB AI Systems
+      </h3>
+      <p className="mt-2 text-sm leading-7 text-zinc-700">
+        Leverage for lean teams: sales follow-up, pipeline clarity, marketing
+        systems, and internal copilots that reduce friction.
+      </p>
+      <p className="mt-4 text-sm font-medium text-zinc-900">
+        Result: more capacity, fewer bottlenecks, less chaos.
+      </p>
+      <div className="mt-5">
+        <Link
+          href="/contact"
+          className="text-sm font-medium text-zinc-900 underline underline-offset-4 hover:no-underline"
+        >
+          Want to see where AI removes friction first? →
+        </Link>
+      </div>
+    </div>
+
+    {/* Card 3 */}
+    <div className="rounded-xl border p-6">
+      <h3 className="text-lg font-semibold text-zinc-900">
+        Operational Intelligence
+      </h3>
+      <p className="mt-2 text-sm leading-7 text-zinc-700">
+        Decision support for leaders: reduce noise, surface risk earlier, and
+        make faster, higher-confidence calls.
+      </p>
+      <p className="mt-4 text-sm font-medium text-zinc-900">
+        Result: clearer decisions at the top.
+      </p>
+      <div className="mt-5">
+        <Link
+          href="/contact"
+          className="text-sm font-medium text-zinc-900 underline underline-offset-4 hover:no-underline"
+        >
+          Curious what clearer decision support looks like? →
+        </Link>
+      </div>
+    </div>
+
+    {/* Card 4 */}
+    <div className="rounded-xl border p-6">
+      <h3 className="text-lg font-semibold text-zinc-900">
+        Training & Adoption
+      </h3>
+      <p className="mt-2 text-sm leading-7 text-zinc-700">
+        Built for Monday morning: role-based sessions, real workflows, clear
+        “use AI / don’t use AI” rules, and adoption metrics.
+      </p>
+      <p className="mt-4 text-sm font-medium text-zinc-900">
+        Result: teams that actually use what they learn.
+      </p>
+      <div className="mt-5">
+        <Link
+          href="/contact"
+          className="text-sm font-medium text-zinc-900 underline underline-offset-4 hover:no-underline"
+        >
+          Want training your team won’t ignore? →
+        </Link>
+      </div>
+    </div>
   </div>
 
-  <div className="rounded-lg border p-6">
-    <h3 className="font-semibold">Applied AI Systems</h3>
-    <p className="mt-2 text-sm text-zinc-700">
-      Productized AI embedded directly into operations, leadership workflows, and
-      decision-making—not demos or pilots.
-    </p>
-  </div>
+  <p className="mt-10 font-medium text-zinc-900">
+    If it doesn’t create leverage, it doesn’t ship.
+  </p>
+</section>
 
-  <div className="rounded-lg border p-6">
-    <h3 className="font-semibold">Governance & Infrastructure</h3>
-    <p className="mt-2 text-sm text-zinc-700">
-      Security, controls, and operating guardrails that allow speed without
-      introducing exposure or chaos.
-    </p>
-  </div>
-
-  <div className="rounded-lg border p-6">
-    <h3 className="font-semibold">Adoption & Enablement</h3>
-    <p className="mt-2 text-sm text-zinc-700">
-      Practical training and systems that teams actually use—so AI compounds
-      instead of collecting dust.
-    </p>
-  </div>
-</div>
-
-<p className="mt-8 font-medium text-zinc-900">
-  If it doesn’t create leverage, it doesn’t ship.
-</p>
-
-<div className="mt-6">
-  <Link
-    href="/contact"
-    className="text-sm font-medium text-zinc-900 underline underline-offset-4 hover:no-underline"
-  >
-    Pressure-test your current AI approach →
-  </Link>
-</div>
 
       </section>
 
