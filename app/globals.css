@@ -1,6 +1,10 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Brand tokens */
+/* =========================
+   Brand tokens (Navy + Gold)
+   ========================= */
 :root {
   --bg: #ffffff;
   --fg: #0b1020;
@@ -9,8 +13,12 @@
 
   --navy: #0b1f3a;
   --gold: #c8a24a;
+
+  --card: #ffffff;
+  --soft: #f6f7fb;
 }
 
+/* Base layout */
 html,
 body {
   height: 100%;
@@ -23,7 +31,7 @@ body {
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-/* Make headings feel intentional (Cinzel) */
+/* Headings (Cinzel) */
 h1,
 h2,
 h3 {
@@ -32,11 +40,43 @@ h3 {
   color: var(--navy);
 }
 
-/* Better default link behavior */
+/* Links */
 a {
   color: inherit;
 }
 
+/* Nice selection highlight */
 ::selection {
   background: rgba(200, 162, 74, 0.25);
+}
+
+/* =========================
+   Global component styling
+   (no new libs, just CSS)
+   ========================= */
+
+/* Make default borders match brand line color */
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r {
+  border-color: var(--line) !important;
+}
+
+/* Give the site a subtle premium feel */
+main {
+  background: var(--bg);
+}
+
+/* Buttons/links that use zinc colors still look good, but we brand-focus hover */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: nicer focus ring in gold */
+:focus-visible {
+  outline: 2px solid rgba(200, 162, 74, 0.6);
+  outline-offset: 3px;
 }
